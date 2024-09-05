@@ -1,0 +1,16 @@
+class Solution {
+    public void duplicateZeros(int[] arr) {
+         int[] duplicate = Arrays.copyOf(arr, arr.length);
+
+        int i = 0;
+        int j = 0;
+        while (j < arr.length) {
+            arr[j] = duplicate[i];
+            if (duplicate[i] == 0 && j + 1 < arr.length) {
+                arr[j + 1] = 0;
+                j++;
+            }
+            i++; j++;
+        }
+    }
+}
